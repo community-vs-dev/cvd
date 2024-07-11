@@ -55,11 +55,29 @@
                 console.log('Audio autoplay was prevented:', error);
                 // User interaction required to play audio
                 var playButton = document.createElement('button');
-                playButton.textContent = 'Play Music';
+                playButton.textContent = 'Play Music 🎵';
                 playButton.style.position = 'fixed';
                 playButton.style.top = '20px';
                 playButton.style.right = '20px';
                 playButton.style.zIndex = '1000';
+                playButton.style.padding = '15px 30px';
+                playButton.style.fontSize = '18px';
+                playButton.style.backgroundColor = '#ff4081';
+                playButton.style.color = '#ffffff';
+                playButton.style.border = 'none';
+                playButton.style.borderRadius = '5px';
+                playButton.style.cursor = 'pointer';
+                playButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                playButton.style.transition = 'background-color 0.3s ease';
+
+                playButton.addEventListener('mouseover', function() {
+                    playButton.style.backgroundColor = '#e91e63';
+                });
+
+                playButton.addEventListener('mouseout', function() {
+                    playButton.style.backgroundColor = '#ff4081';
+                });
+
                 document.body.appendChild(playButton);
                 playButton.addEventListener('click', function() {
                     audio.play();
