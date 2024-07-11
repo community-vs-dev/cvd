@@ -42,5 +42,31 @@
         </ul>
         <p>Join us on Telegram to be part of a strong, knowledgeable, and vigilant community. Together, we can make the crypto world safer and more exciting for everyone.</p>
     </section>
+    <div class="audio-player">
+        <audio id="background-audio" loop>
+            <source src="audio/Heart of Steel ext v2.2.2.2.1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-audio');
+            audio.play().catch(function(error) {
+                console.log('Audio autoplay was prevented:', error);
+                // User interaction required to play audio
+                var playButton = document.createElement('button');
+                playButton.textContent = 'Play Music';
+                playButton.style.position = 'fixed';
+                playButton.style.top = '20px';
+                playButton.style.right = '20px';
+                playButton.style.zIndex = '1000';
+                document.body.appendChild(playButton);
+                playButton.addEventListener('click', function() {
+                    audio.play();
+                    playButton.remove();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
