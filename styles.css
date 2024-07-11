@@ -101,3 +101,10 @@ ul {
 ul li {
     margin-bottom: 10px;
 }
+
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
